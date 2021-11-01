@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="HandheldFriendly" content="true">
+    <title>安信可模组定位显示功能</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">
+
+</head>
+<body ontouchstart>
+<section class="ui-container">
+    <section id="layout">
+        <div class="demo-item">
+            <div class="demo-block" style="padding-top: 30px">
+                <div class="ui-flex ui-flex-pack-center">
+                    <div>
+                        <img id="img" width="100%" src="http://fae.aithinker.com/static/aithinker.png">
+                    </div>
+                </div>
+                <div class="demo-item" style="padding-top: 50px">
+                    <div class="demo-block">
+                        <div class="ui-whitespace">
+                            <p class="ui-txt-justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本功能由深圳安信可科技公司-安信可开源团队自主研发，仅做演示功能Demo使用。如擅自商用，出现任何损失，我司概不负责。</p>
+                            <p class="ui-txt-justify" style="padding-top: 8px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;技术邮箱：support@aithinker.com </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ui-btn-wrap ui-btn-wrap-middle" style="margin-top: 80px" id="btnStartNB">
+                    <button class="ui-btn-lg-nowhole ui-btn-primary">
+                        NB-IoT系列模组定位显示
+                    </button>
+
+                </div>
+
+                <div class="ui-btn-wrap ui-btn-wrap-middle" style="margin-top: 20px" id="btnStartA9G">
+                    <button class="ui-btn-lg-nowhole ui-btn-primary">
+                        A9G模组定位显示
+                    </button>
+                </div>
+
+                <!--                <div id="load" class="demo-block">-->
+                <!--                    <div class="ui-loading-block show">-->
+                <!--                        <div class="ui-loading-cnt">-->
+                <!--                            <i class="ui-loading-bright"></i>-->
+                <!--                            <p>正在加载中...</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+            </div>
+        </div>
+    </section>
+</section>
+
+</body>
+<script>
+
+    //对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+    var useragent = navigator.userAgent;
+    if (useragent.match(/WindowsWechat/) == 'WindowsWechat' || useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+        // 这里警告框会阻塞当前页面继续加载
+        //alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
+        document.head.innerHTML = '<title>抱歉，出错了</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.4.1/weui.css">';
+        document.body.innerHTML = '<div class="weui_msg"><div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div><div class="weui_text_area"><h4 class="weui_msg_title">请在微信客户端打开链接</h4></div></div>';
+    }
+
+
+    $("#btnStartNB").click(function () {
+        window.location.href = "http://fae.aithinker.com/nb_location"
+    });
+    $("#btnStartA9G").click(function () {
+        window.location.href = "http://wx.ai-thinker.com/device/list/list"
+    });
+
+
+</script>
+</html>

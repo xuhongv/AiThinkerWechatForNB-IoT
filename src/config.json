@@ -1,0 +1,8 @@
+{
+  "token": "",
+  "encodingAESKey": "",
+  "accoutId": "填写您的微信公众号ID",
+  "appID": "填写您的微信公众号appID",
+  "appScrect": "填写您的微信公众号appScrect",
+  "myDomain": "http://这里填写您的域名/nb_location"
+}
