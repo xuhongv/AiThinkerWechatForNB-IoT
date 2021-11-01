@@ -31,11 +31,11 @@ npm install
 
 Step ③ ：修改公众号配置，设置JS接口安全域名：
 
-![domain_config_01](png\domain_config_01.png)
+![domain_config_01](png/domain_config_01.png)
 
 Step ④ ：查看开发信息，并设置IP白名单。
 
-![domain_config_01](png\domain_config_02.png)
+![domain_config_01](png/domain_config_02.png)
 
 Step ⑤ ：代码中修改配置，在 src/config.json 文件里面修改：
 
