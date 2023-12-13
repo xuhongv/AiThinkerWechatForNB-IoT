@@ -1,6 +1,6 @@
 const express = require('express')
 const wechat = require('wechat-api')
-const nb = require('./nb/map_show/map_show')
+const wx_config = require('./config/weichat_config')
 const config = require('./config')
 const ejs = require("ejs");
 const fs = require("fs");
@@ -29,20 +29,32 @@ app.get('/static/*', function (req, res) {
 // })
 
 
-app.get('/nb', (req, res) => {
-    res.sendFile(__dirname + "/" + 'wechat_nb_iot/index.html')
+//主页
+app.get('/index', (req, res) => {
+    res.sendFile(__dirname + "/" + 'index/index.html')
 })
 
-app.get("/nb_location", function (req, res) {
+//微信配网
+app.get('/api/old/wifi/config', (req, res) => {
     //异步返回
-    nb.getJsConfig(wechatApi, config).then(data => {
-        res.render(__dirname + "/nb/map_show/" + "index.ejs", {data: JSON.stringify(data)});
+    wx_config.getAirKissJsConfig(wechatApi, config).then(data => {
+        res.render(__dirname + "/index/wechat/" + "airkiss.ejs", {data: JSON.stringify(data)});
     }).catch(e => {
-        res.render(__dirname + "/nb/map_show/" + "index.ejs", {data: null});
+        res.render(__dirname + "/index/wechat/" + "airkiss.ejs", {data: null});
+    });
+     
+})
+
+app.get("/index/nb_location", function (req, res) {
+    //异步返回
+    wx_config.getJsConfig(wechatApi, config).then(data => {
+        res.render(__dirname + "/index/map_show/" + "index.ejs", {data: JSON.stringify(data)});
+    }).catch(e => {
+        res.render(__dirname + "/index/map_show/" + "index.ejs", {data: null});
     });
 });
 
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`app listening at http://localhost:${port}`)
 })

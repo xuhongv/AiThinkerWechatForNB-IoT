@@ -18,13 +18,13 @@
             <div class="demo-block" style="padding-top: 30px">
                 <div class="ui-flex ui-flex-pack-center">
                     <div>
-                        <img id="img" width="100%" src="http://fae.aithinker.com/static/aithinker.png">
+                        <img id="img" width="100%" src="http://combo-at.aithinker.com/static/aithinker.png">
                     </div>
                 </div>
                 <div class="demo-item" style="padding-top: 50px">
                     <div class="demo-block">
                         <div class="ui-whitespace">
-                            <p class="ui-txt-justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本功能由深圳安信可科技公司-安信可开源团队自主研发，仅做演示功能Demo使用。如擅自商用，出现任何损失，我司概不负责。</p>
+                            <p class="ui-txt-justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本功能由安信可开源团队自主研发，仅用于Demo功能演示，请勿商用。如需商务合作，请联系0755-29162996。</p>
                             <p class="ui-txt-justify" style="padding-top: 8px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;技术邮箱：support@aithinker.com </p>
                         </div>
                     </div>
@@ -33,16 +33,17 @@
 
                 <div class="ui-btn-wrap ui-btn-wrap-middle" style="margin-top: 80px" id="btnStartNB">
                     <button class="ui-btn-lg-nowhole ui-btn-primary">
-                        NB-IoT系列模组定位显示
-                    </button>
-
-                </div>
-
-                <div class="ui-btn-wrap ui-btn-wrap-middle" style="margin-top: 20px" id="btnStartA9G">
-                    <button class="ui-btn-lg-nowhole ui-btn-primary">
-                        A9G模组定位显示
+                        NB/A9G系列模组定位显示
                     </button>
                 </div>
+
+
+                <!--A9G不再维护-->
+                <!--<div class="ui-btn-wrap ui-btn-wrap-middle" style="margin-top: 20px" id="btnStartA9G">-->
+                <!--    <button class="ui-btn-lg-nowhole ui-btn-primary">-->
+                <!--        A9G模组定位显示-->
+                <!--    </button>-->
+                <!--</div>-->
 
                 <!--                <div id="load" class="demo-block">-->
                 <!--                    <div class="ui-loading-block show">-->
@@ -72,12 +73,13 @@
 
 
     $("#btnStartNB").click(function () {
-        window.location.href = "http://fae.aithinker.com/nb_location"
+        window.location.href = "/index/nb_location"
     });
+
+
     $("#btnStartA9G").click(function () {
         window.location.href = "http://wx.ai-thinker.com/device/list/list"
     });
-
 
 </script>
 </html>

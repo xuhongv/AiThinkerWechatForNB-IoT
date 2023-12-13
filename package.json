@@ -1,16 +1,17 @@
 {
-  "name": "fae.aithinker.com",
+  "name": "wx.aithinker.com",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^3.1.9",
+    "express": "^4.17.1",
+    "wechat-api": "^1.35.1"
   }
 }

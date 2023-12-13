@@ -1,16 +1,31 @@
-# AiThinkerWechatForNB-IoT
-
-<p align="center">
-  <img src="png/main.jpg" alt="Banner" />
-</p>
+# AiThinkerWechat
 
 
-这是基于安信可NB-IoT模组+GPS模组打造的一个可远程显示定位信息的服务器和微信公众号前端代码，现全面开源奉献物联网。
+
+这是基于安信可NB-IoT模组+GPS模组/WiFi模组打造的一个可远程显示定位信息的服务器和微信公众号前端代码，现全面开源奉献物联网。
 
 - [x] 需要自己集成一个MQTT服务器，必须支持 websocket 以及 TCP 协议。
 - [x] 集成百度地图开发API SDK等组件：[https://lbsyun.baidu.com/index.php?title=jspopularGL](https://lbsyun.baidu.com/index.php?title=jspopularGL)
 - [x] 必须自己搭建一个可远程访问的主机，可以使用阿里云ECS、腾讯云、华为云等远程主机。
 - [x] 必须准备一个微信公众号，自行注册：https://mp.weixin.qq.com/
+
+### 页面效果
+
+<table>
+  <tbody>
+    <tr >
+      <td align="center" valign="middle" style="border-style:none">
+       <img class="QR-img" height="780" width="360" src="png/1.jpg">
+        <p style="font-size:12px;">NB/A9G模组定位</p>
+      </td>
+      <td align="center" valign="middle" style="border-style:none">
+        <img class="QR-img" height="780" width="360" src="png/2.jpg">
+        <p style="font-size:12px;">微信配网页面</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 一、服务器开始集成
 
@@ -46,7 +61,8 @@ Step ⑤ ：代码中修改配置，在 src/config.json 文件里面修改：
   "accoutId": "填写您的微信公众号ID",
   "appID": "填写您的微信公众号appID",
   "appScrect": "填写您的微信公众号appScrect",
-  "myDomain": "http://这里填写您的域名/nb_location"
+  "myDomain": "http://域名/index",
+  "airkissDomain": "http://域名/api/old/wifi/config" 
 }
 ```
 
@@ -60,7 +76,7 @@ Step ⑥ ：代码修改MQTT服务器配置信息，在[src/nb/map_show/index.ej
         clean: false
     }
     
-    //浏览器采用websocket协议，host主机地址为192.168.0.200，端口为9001，路径为/mqtt
+    //浏览器采用websocket协议，host主机地址，端口，路径为
     var client = mqtt.connect("ws://www.your-domain.com:8083/mqtt", options) 
     
 ```
@@ -111,4 +127,3 @@ Example app listening at http://localhost:8024
     </tr>
   </tbody>
 </table>
-
